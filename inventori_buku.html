@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Inventory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f4f7, #c2d3e1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background-color: #27496d;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+        .form-section, .table-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .form-section {
+            background-color: #f9fbfc;
+            border-radius: 10px;
+        }
+        .form-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group button {
+            background-color: #27496d;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .form-group button:hover {
+            background-color: #1b354e;
+        }
+        .table-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        table thead {
+            background-color: #27496d;
+            color: #fff;
+        }
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #f9fbfc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Library Inventory Management</h1>
+            <p>Your digital solution to track books seamlessly</p>
+        </header>
+        <div class="content">
+            <div class="form-section">
+                <h2>Add New Book</h2>
+                <div class="form-group">
+                    <label for="bookTitle">Book Title</label>
+                    <input type="text" id="bookTitle" placeholder="Enter book title">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Enter author name">
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" id="isbn" placeholder="Enter ISBN">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" placeholder="Enter quantity">
+                </div>
+                <div class="form-group">
+                    <button onclick="addBook()">Add Book</button>
+                </div>
+            </div>
+            <div class="table-section">
+                <h2>Books Inventory</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>ISBN</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookList">
+                        <!-- Books will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addBook() {
+            const title = document.getElementById('bookTitle').value.trim();
+            const author = document.getElementById('author').value.trim();
+            const isbn = document.getElementById('isbn').value.trim();
+            const quantity = document.getElementById('quantity').value.trim();
+
+            if (!title || !author || !isbn || !quantity) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const tableBody = document.getElementById('bookList');
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${title}</td>
+                <td>${author}</td>
+                <td>${isbn}</td>
+                <td>${quantity}</td>
+            `;
+
+            tableBody.appendChild(row);
+
+            document.getElementById('bookTitle').value = '';
+            document.getElementById('author').value = '';
+            document.getElementById('isbn').value = '';
+            document.getElementById('quantity').value = '';
+        }
+    </script>
+</body>
+</html>

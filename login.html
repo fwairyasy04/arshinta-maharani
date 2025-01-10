@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #6A4BBC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+    .left {
+      background-color: #f0f0f0;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .left img {
+      max-width: 100%;
+      height: auto;
+    }
+    .right {
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .logo img {
+      width: 50px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .form-group i {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+    .form-group.position-relative {
+      position: relative;
+    }
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .form-options label {
+      display: flex;
+      align-items: center;
+    }
+    .form-options input {
+      margin-right: 10px;
+    }
+    .login-btn {
+      background-color: #6A4BBC;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .login-btn:hover {
+      background-color: #5a3aa1;
+    }
+    .signup-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .signup-link a {
+      color: #6A4BBC;
+      text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="logo">
+        <img src="https://storage.googleapis.com/a1aa/image/5z8KeU7CD03fKEqDIpAjKXOIaQaIXgEqqVc8IN9wtKYD2vCUA.jpg" alt="Logo" width="50" height="50"/>
+      </div>
+      <img src="https://storage.googleapis.com/a1aa/image/1gimB9IFlzavKhpx9ZXR6IBkdtszxznTpkwScLTrDOYg9rAF.jpg" alt="Illustration" width="400" height="300"/>
+    </div>
+    <div class="right">
+      <div class="form-group position-relative">
+        <input id="username" type="text" placeholder="USERNAME"/>
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form-group position-relative">
+        <input id="password" type="password" placeholder="PASSWORD"/>
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="form-options">
+        <label>
+          <input type="checkbox"/> Remember me
+        </label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <button class="login-btn" onclick="login()">LOGIN</button>
+      <div class="signup-link">
+        Don't have an account yet? <a href="beranda.html">Create an account</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === "admin" && password === "1234") {
+        alert("Login successful!");
+        // Redirect to beranda.html
+        window.location.href = "beranda.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Transactions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .left {
+            flex: 1;
+            background-color: #6a11cb;
+            background-image: linear-gradient(315deg, #6a11cb 0%, #2575fc 74%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left img {
+            width: 100%;
+            height: auto;
+        }
+        .right {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .right form {
+            display: flex;
+            flex-direction: column;
+        }
+        .right form .form-group {
+            margin-bottom: 15px;
+        }
+        .right form .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .right form .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .right form .form-group .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .right form .form-group .btn:hover {
+            background-color: #0056b3;
+        }
+        .right form .form-group .link {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .right form .form-group .link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .right form .form-group .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        <img alt="Illustration" src="https://storage.googleapis.com/a1aa/image/REi5eYZh8S26TKb3eWWl6hxucKmwknOIf0pDfu7t7j1nwaLQB.jpg"/>
+    </div>
+    <div class="right">
+        <h2>Transactions</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" type="text" placeholder="Enter your full name"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your email"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter your password"/>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" type="password" placeholder="Confirm your password"/>
+            </div>
+            <div class="form-group">
+                <button class="btn" type="button" onclick="register()">Register</button>
+            </div>
+            <div class="form-group link">
+                <span>Already have an account? <a href="#" onclick="showLoginForm()">Sign in</a></span>
+            </div>
+        </form>
+
+        <form id="loginForm" style="display: none;">
+            <h2 id="formTitle">Login</h2>
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" type="email" placeholder="Enter your email"/>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" type="password" placeholder="Enter your password"/>
+            </div>
+            <div class="form-group">
+                <button class="btn" type="button" onclick="login()">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function register() {
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+        if (!fullName || !email || !password || !confirmPassword) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+
+        const user = { fullName, email, password };
+        localStorage.setItem('user', JSON.stringify(user));
+        alert('Registration successful! Please log in.');
+        showLoginForm();
+    }
+
+    function login() {
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (!email || !password) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (user && user.email === email && user.password === password) {
+            alert(`Welcome back, ${user.fullName}!`);
+            window.location.href = "succes.html";
+        } else {
+            alert('Invalid email or password.');
+        }
+    }
+
+    function showLoginForm() {
+        document.getElementById('registrationForm').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Bookstore
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #003d4c;
+            color: white;
+            padding: 20px 0;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        header .search-bar input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        header .search-bar button {
+            background-color: #007b8a;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero {
+            background-color: #e8f5f9;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        .hero .btn {
+            background-color: #007b8a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .categories {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .categories h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .categories p {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        .categories .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .categories .category-item {
+            background-color: #f0f8fa;
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+        }
+        .categories .category-item img {
+            max-width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .about {
+            background-color: #e8f5f9;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .about p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .about img {
+            max-width: 100%;
+            height: auto;
+        }
+        .about .btn {
+            background-color: #007b8a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .testimonials {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .testimonials h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .testimonials .testimonial-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .testimonials .testimonial-item {
+            background-color: #003d4c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: left;
+        }
+        .testimonials .testimonial-item img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .testimonials .testimonial-item .name {
+            font-weight: bold;
+        }
+        .testimonials .testimonial-item .role {
+            font-size: 14px;
+            color: #b0c4c7;
+        }
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            .categories .category-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .testimonials .testimonial-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="logo">
+     Bostorek
+    </div>
+    <div class="search-bar">
+     <input placeholder="Search here..." type="text"/>
+     <button>
+      <i class="fas fa-search">
+      </i>
+     </button>
+    </div>
+   </div>
+  </header>
+  <section class="hero">
+   <h1>
+    For All Your Reading Needs
+   </h1>
+   <img alt="Illustration of people reading books" height="400" src="https://storage.googleapis.com/a1aa/image/8OL9Ygv41qLhABhRf5KVLDDaBaqE8hqcwtO23eqTLUp74tCUA.jpg" width="600"/>
+  </section>
+  <section class="categories">
+   <h2>
+    Books Categories
+   </h2>
+   <p>
+    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+   </p>
+   <div class="category-list">
+    <div class="category-item">
+     <img alt="Icon representing textbooks" height="50" src="https://storage.googleapis.com/a1aa/image/LgUDrytgYHLXANm4HQafHO9Ne4f8aMuoKeqLe8KiWe8ATeWBKA.jpg" width="50"/>
+     <h3>
+      Textbooks
+     </h3>
+     <p>
+      Buku panduan dan materi pembelajaran untuk berbagai mata pelajaran.
+     </p>
+    </div>
+    <div class="category-item">
+     <img alt="Icon representing science books" height="50" src="https://storage.googleapis.com/a1aa/image/ayO3HEJqt6LVAJ9Ck3FycSBBruelP2cKheDpOZkwvrPG5tCUA.jpg" width="50"/>
+     <h3>
+      Science
+     </h3>
+     <p>
+      Koleksi buku sains yang mendalami berbagai disiplin ilmu.
+     </p>
+    </div>
+    <div class="category-item">
+     <img alt="Icon representing history books" height="50" src="https://storage.googleapis.com/a1aa/image/YExvfdtMnXxyKKfElnsinTTTKh8Jgn5hZJdEXw8rdI9A5tCUA.jpg" width="50"/>
+     <h3>
+      History
+     </h3>
+     <p>
+      Jelajahi peristiwa bersejarah dan kisah dari masa lalu.
+     </p>
+    </div>
+    <div class="category-item">
+     <img alt="Icon representing biography books" height="50" src="https://storage.googleapis.com/a1aa/image/udRoA7GGksLGHx7prRfn7m0EWj1QN514V8CjEZOijaCf4tCUA.jpg" width="50"/>
+     <h3>
+      Biography
+     </h3>
+     <p>
+      Kisah inspiratif dari tokoh terkenal dan perjalanan hidup mereka.
+     </p>
+    </div>
+    <div class="category-item">
+     <img alt="Icon representing adventure books" height="50" src="https://storage.googleapis.com/a1aa/image/dHeInNy8kK2pcK66LVijn8a6WamoLUawfW1Q4MaZyX4I5tCUA.jpg" width="50"/>
+     <h3>
+      Adventure
+     </h3>
+     <p>
+      Cerita penuh aksi dan petualangan yang menegangkan.
+     </p>
+    </div>
+    <div class="category-item">
+     <img alt="Icon representing fantasy books" height="50" src="https://storage.googleapis.com/a1aa/image/wGytHzM22kbXF5q3TQ3lLVoaxS6aJeoig9rHHHxpYeA94tCUA.jpg" width="50"/>
+     <h3>
+      Fantasy
+     </h3>
+     <p>
+      Dunia imajinasi yang memikat dengan cerita fantasi menarik.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="about">
+   <h2>
+    About Our Bookstore
+   </h2>
+   <p>
+    Welcome to our bookstore, where stories come alive! We offer a wide range of books across genres like fiction, science, history, fantasy, and more.
+
+Discover new arrivals, timeless classics, and resources to inspire your journey. Join us for events, workshops, and a seamless shopping experience.</p>
+
+<p>📚 Your next adventure starts here!</p>
+   <img alt="Illustration of a bookstore with people" height="400" src="https://storage.googleapis.com/a1aa/image/cVoJ6mTxGkKuLdB2TdAE6nV0eVRcE36tXTb18kvousHl8WBKA.jpg" width="600"/>
+  </section>
+  <section class="testimonials">
+   <h2>
+    What Says Customers
+   </h2>
+   <div class="testimonial-list">
+    <div class="testimonial-item">
+     <img alt="Photo of Jane Mark" height="80" src="jaemin.jpg" width="70"/>
+     <div>
+      <div class="name">
+       Jaemin
+      </div>
+      <div class="role">
+       Student
+      </div>
+      <p>
+       "Pelayanan staf perpustakaan sangat ramah dan membantu. Mereka selalu siap menjawab pertanyaan dan memberikan rekomendasi buku."
+      </p>
+     </div>
+    </div>
+    <div class="testimonial-item">
+     <img alt="Photo of Anna Crowe" height="50" src="tae.jpg" width="50"/>
+     <div>
+      <div class="name">
+       taehyung
+      </div>
+      <div class="role">
+       Student
+      </div>
+      <p>
+        "Koleksi buku di perpustakaan ini sangat lengkap dan selalu up-to-date. Tempat yang nyaman untuk belajar dan membaca!"
+      </p>
+     </div>
+    </div>
+    <div class="testimonial-item">
+     <img alt="Photo of another customer" height="50" src="sunghoon.jpg" width="50"/>
+     <div>
+      <div class="name">
+       sunghoon
+      </div>
+      <div class="role">
+       Student
+      </div>
+      <p>
+        "Fasilitasnya luar biasa! Ruang baca yang tenang, akses internet cepat, dan suasana yang mendukung produktivitas."
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+ </body>
+</html>

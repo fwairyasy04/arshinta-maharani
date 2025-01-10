@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<!DOCTYPE html>
+    <title>Document</title>
+    <html lang="en">
+    </head>
+    <body>  
+        <form action="pendaftaran.html"
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulir Pendaftaran Mengaji</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                text-align: center;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            input[type="text"], input[type="tel"], input[type="date"], select, textarea {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+            input[type="file"] {
+                margin-top: 10px;
+            }
+            button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: blue;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #b22d5e;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="container">
+            <h2>pendaftaran keanggotaan</h2>
+            <form id="studentForm">
+                <!-- Nama -->
+                <form method="post" action="prosesData.php">
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </form>
+                <br>
+                
+                <!-- Tempat Lahir dan Tanggal Lahir -->
+            <form method="post" action="prosesData.php">
+                    <label for="tempatLahir">Tempat Lahir:</label>
+                    <input type="text" id="tempatLahir" name="tempatLahir" required>
+            </form>
+            <br>
+
+                <div class="form-group">
+                    <label for="tanggalLahir">Tanggal Lahir:</label>
+                    <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+                </div>
+                <br>
+    
+                <!-- Agama -->
+                <form method="post" action="prosesData.php">
+                    <label for="agama">Agama:</label>
+                    <select id="agama" name="agama" required>
+                        <option value="">--Pilih Agama--</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </form>
+                <br>
+    
+                <!-- Alamat -->
+                <form method="post" action="prosesData.php">
+                    <label for="alamat">Alamat:</label>
+                    <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                </form>
+                <br>
+    
+                <!-- Nomor Telepon -->
+                <form method="post">
+                    <label for="noTelepon">Nomor Telepon:</label>
+                    <input type="number" name="nilai" size="50" value="" style="width: 590px;">
+                </form>
+                <br>
+
+                <!-- Jenis Kelamin -->
+                <form method="post" action="prosesData.php">
+                    <label for="jenisKelamin">Jenis Kelamin:</label>
+                   <input type="radio" name="sex" value="L">Laki-Laki
+                    <input type="radio" name="sex" value="P">Perempuan
+                </form>
+                <br>
+    
+                <!-- Hobi -->
+                <div class="form-group">
+                    <label for="hobi">Hobi:</label>
+                    <input type="checkbox" name="hobby" value="1">sepak bola
+                    <input type="checkbox" name="hobby" value="2">menari
+                    <input type="checkbox" name="hobby" value="3"> tidur
+                    <input type="checkbox" name="hobby" value="4"> Badminton
+                    <input type="checkbox" name="hobby" value="5"> Membaca
+                    <input type="checkbox" name="hobby" value="6"> berenang
+                    <input type="checkbox" name="hobby" value="7"> Belanja
+                    <input type="checkbox" name="hobby" value="8"> menonton flim
+                </div>
+    
+                <!-- Upload Foto -->
+                <div class="form-group">
+                    <label for="foto">Upload Foto:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" required>
+                </div>
+    
+                <!-- Tombol Submit -->
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    </html>
